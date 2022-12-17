@@ -40,7 +40,7 @@ chmod +x cr4ckalysis
 
 ## Hash Coverage
 
-| ***Hash Algorithm*** | ***Advanced Algorithm***                       |
+| ***Hash Algorithm*** | ***Description***                              |
 |----------------------|------------------------------------------------|
 | MD5                  | Message-Digest Algorithm 5                     |
 | MD4                  | Message-Digest Algorithm 4                     |
