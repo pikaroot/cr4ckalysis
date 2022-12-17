@@ -1,6 +1,7 @@
 # ***cr4ckalysis***
 
 ![Kali](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Python](https://img.shields.io/badge/python_3.10-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
@@ -15,15 +16,26 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in P
 
 ## Installation
 
+#### Install latest python3, pycrypto, pycryptodome
 ```
-# Install latest python3, pycrypto, pycryptodome
 sudo apt update
 sudo apt install python3
 pip3 install pycrypto
 pip3 install pycryptodome
+```
 
-# Install cr4ckalysis
+### Install cr4ckalysis
+```
 sudo apt install cr4ckalysis
+cr4ckalysis
+```
+
+### Clone git repository
+```
+git clone https://github.com/pikaroot/cr4ckalysis.git
+cd cr4ckalysis
+chmod +x cr4ckalysis
+./cr4ckalysis
 ```
 
 ## Hash Coverage
