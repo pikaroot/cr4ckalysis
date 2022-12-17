@@ -16,7 +16,7 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in P
 
 ## Installation
 
-#### Install latest python3, pycrypto, pycryptodome
+### Install latest python3, pycrypto, pycryptodome
 ```
 sudo apt update
 sudo apt install python3
