@@ -24,11 +24,11 @@ pip3 install pycrypto
 pip3 install pycryptodome
 ```
 
-### Install cr4ckalysis
-```
-sudo apt install cr4ckalysis
+<!--### Install cr4ckalysis
+```sudo apt install cr4ckalysis
 cr4ckalysis
 ```
+-->
 
 ### Clone git repository
 ```
