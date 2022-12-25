@@ -50,19 +50,14 @@ chmod +x cr4ckalysis
 | SHA-256              | Secure Hash Algorithm 2 with 256 bits          |
 | SHA-384              | Secure Hash Algorithm 2 with 384 bits          |
 | SHA-512              | Secure Hash Algorithm 2 with 512 bits          |
-| SHA-512/224          | Secure Hash Algorithm 512 truncated variant 224|
-| SHA-512/256          | Secure Hash Algorithm 512 truncated variant 256|
 | SHA3-224             | Secure Hash Algorithm 3 with 224 bits          |
 | SHA3-256             | Secure Hash Algorithm 3 with 256 bits          |
 | SHA3-384             | Secure Hash Algorithm 3 with 384 bits          |
 | SHA3-512             | Secure Hash Algorithm 3 with 512 bits          |
 | SHAKE-128            | Shake 128 bits                                 |
 | SHAKE-256            | Shake 256 bits                                 |
-| SM3                  | ShangMi 3                                      |
 | BLAKE2b              | Blake 2 (1-64 bits)                            |
 | BLAKE2s              | Blake 2 (1-32 bits)                            |
-| RIPEMD160            | RIPE Mesage Digest                             |
-| Whirlpool            | Whirlpool 512 bits                             |
 | AES                  | Advanced Encryption Standard                   |
 
 ## Similar Tools
