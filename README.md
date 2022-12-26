@@ -11,18 +11,18 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in P
 ## Features
 
 - Hash Analysis
-- Online Password Brute-Forcing
-- Offline Password Recovery
+- SSH Password Cracking
+- FTP Password Cracking
+- Offline Hash Recovery
 - Parameter Settings
 
-## Installation
+## Requirements
 
-### Install latest python3, pycrypto, pycryptodome
+### Install latest python3, pexpect
 ```
 sudo apt update
 sudo apt install python3
-pip3 install pycrypto
-pip3 install pycryptodome
+pip3 install pexpect
 ```
 
 <!--### Install cr4ckalysis
@@ -30,6 +30,8 @@ pip3 install pycryptodome
 cr4ckalysis
 ```
 -->
+
+## Installation
 
 ### Clone git repository
 ```
@@ -58,7 +60,6 @@ chmod +x cr4ckalysis
 | SHAKE-256            | Shake 256 bits                                 |
 | BLAKE2b              | Blake 2 (1-64 bits)                            |
 | BLAKE2s              | Blake 2 (1-32 bits)                            |
-| AES                  | Advanced Encryption Standard                   |
 
 ## Similar Tools
 
