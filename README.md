@@ -23,6 +23,7 @@ sudo apt update
 sudo apt install python3
 pip3 install pexpect
 pip3 install ftplib
+pip3 install python-nmap
 ```
 
 ### Install rockyou.txt
