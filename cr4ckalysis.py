@@ -60,46 +60,46 @@ class Terminal(Cmd):
         self.setting2 = "/usr/share/dirb/wordlists/common.txt"
         self.setting3 = "127.0.0.1" # IP address
         self.setting4 = "admin" # Username
-        self.setting5 = "./passlist.txt" # Password
+        self.setting5 = "./testpass.txt" # Password
         self.setting6 = "MD5" # hashmode
 
-    def get_wordlist(self): # DONE
+    def get_wordlist(self):
         return self.setting1
 
-    def get_wordlist2(self): # DONE
+    def get_wordlist2(self):
         return self.setting2
 
-    def get_ipv4(self): # DONE
+    def get_ipv4(self):
         return self.setting3
 
-    def get_username(self): # DONE
+    def get_username(self):
         return self.setting4
 
-    def get_password(self): # DONE
+    def get_password(self):
         return self.setting5
 
-    def get_hashmode(self): # DONE
+    def get_hashmode(self):
         return self.setting6
 
-    def set_wordlist(self, setting1): # DONE
+    def set_wordlist(self, setting1):
         self.setting1 = setting1
 
-    def set_wordlist2(self, setting2): # DONE
+    def set_wordlist2(self, setting2):
         self.setting2 = setting2
 
-    def set_ipv4(self, setting3): # DONE
+    def set_ipv4(self, setting3):
         self.setting3 = setting3
 
-    def set_username(self, setting4): # DONE
+    def set_username(self, setting4):
         self.setting4 = setting4
 
-    def set_password(self, setting5): # DONE
+    def set_password(self, setting5):
         self.setting5 = setting5
 
-    def set_hashmode(self, setting6): # DONE
+    def set_hashmode(self, setting6):
         self.setting6 = setting6
 
-    def completenames(self, text, *ignored): # DONE
+    def completenames(self, text, *ignored):
         dotext = 'do_'+text
         return [a[3:]+' ' for a in self.get_names() if a.startswith(dotext)]
 
@@ -122,7 +122,7 @@ class Terminal(Cmd):
         else:
             self.stdout.write(f'\n{bred}[-] {rst}File not exist: %s\n\n' % (params[0],))
 
-    def complete_set_wlist(self, text, line, begidx, endidx): # DONE
+    def complete_set_wlist(self, text, line, begidx, endidx):
         cmdidx = line.rfind(" ", 0, begidx)
         if cmdidx == -1:
             return
@@ -137,7 +137,7 @@ class Terminal(Cmd):
             complete.append(path.replace(cmd, "", 1))
         return complete
 
-    def do_set_wlist2(self, args): # DONE
+    def do_set_wlist2(self, args):
         params = args.split()
 
         if len(params) == 0 or len(params) > 1:
@@ -156,7 +156,7 @@ class Terminal(Cmd):
         else:
             self.stdout.write(f'\n{bred}[-] {rst}File not exist: %s\n\n' % (params[0],))
 
-    def complete_set_wlist2(self, text, line, begidx, endidx): # DONE
+    def complete_set_wlist2(self, text, line, begidx, endidx):
         cmdidx = line.rfind(" ", 0, begidx)
         if cmdidx == -1:
             return
@@ -171,7 +171,7 @@ class Terminal(Cmd):
             complete.append(path.replace(cmd, "", 1))
         return complete
 
-    def do_set_hmode(self, args): # DONE
+    def do_set_hmode(self, args):
         params = args.split()
 
         if len(params) == 0 or len(params) > 1:
@@ -187,13 +187,13 @@ class Terminal(Cmd):
         else:
             self.stdout.write(f'\n{bred}[-] {rst}Hash algorithm not support: %s\n\n' % (params[0],))
 
-    def complete_set_hmode(self, text, line, begidx, endidx): # DONE
+    def complete_set_hmode(self, text, line, begidx, endidx):
         if text:
             return [alg + ' ' for alg in lib.crack.__algorithms__ if alg.startswith(text)]
         else:
             return lib.crack.__algorithms__
 
-    def do_set_uname(self, args): # DONE
+    def do_set_uname(self, args):
         params = args.split()
 
         if len(params) == 0 or len(params) > 1:
@@ -217,7 +217,7 @@ class Terminal(Cmd):
             print(f"{bgrn}[+] {rst}Set username --> {params[0]}")
             print(f"{bgrn}[+] {rst}Command completed successfully.\n")
 
-    def do_set_pword(self, args): # DONE
+    def do_set_pword(self, args):
         params = args.split()
 
         if len(params) == 0 or len(params) > 1:
@@ -241,7 +241,7 @@ class Terminal(Cmd):
             print(f"{bgrn}[+] {rst}Set password --> {params[0]}")
             print(f"{bgrn}[+] {rst}Command completed successfully.\n")
         
-    def complete_set_uname(self, text, line, begidx, endidx): # DONE
+    def complete_set_uname(self, text, line, begidx, endidx):
         cmdidx = line.rfind(" ", 0, begidx)
         if cmdidx == -1:
             return
@@ -271,7 +271,7 @@ class Terminal(Cmd):
             complete.append(path.replace(cmd, "", 1))
         return complete
 
-    def do_ls(self, args): # DONE
+    def do_ls(self, args):
         if len(args) == 0:
             self.stdout.write(f'\n{blue}[*] {rst}SETTINGS\n')
             self.stdout.write(f'\nwordlist.: ' + self.get_wordlist())
@@ -283,7 +283,7 @@ class Terminal(Cmd):
         else:
             print(f"\n{bred}[-] {rst}Command 'ls' takes no arguments.\n")
 
-    def do_analyse(self, args): # DONE  
+    def do_analyse(self, args):  
         params = args.split()
         if len(params) == 0 or len(params) > 1:
             qg = QuickGuide()
@@ -311,7 +311,7 @@ class Terminal(Cmd):
                 lib.analysis.writeResult(hashID.identifyHash(params[0]), self.stdout)
                 self.stdout.write(f"\n{blue}[*] {rst}End of analysis.\n\n")
 
-    def complete_analyse(self, text, line, begidx, endidx): # DONE
+    def complete_analyse(self, text, line, begidx, endidx):
         cmdidx = line.rfind(" ", 0, begidx)
         if cmdidx == -1:
             return
@@ -368,13 +368,13 @@ class Terminal(Cmd):
             except ValueError:
                 self.stdout.write(f'\n{bred}[-] {rst}Unsupported hash type: {hashmode}\n\n')
 
-    def complete_crack(self, text, line, begidx, endidx): # DONE
+    def complete_crack(self, text, line, begidx, endidx):
         if text:
             return [setting + ' ' for setting in lib.crack.__crackcmd__ if setting.startswith(text)]
         else:
             return lib.crack.__crackcmd__
 
-    def do_set_ipv4(self,args): # DONE
+    def do_set_ipv4(self,args):
         params = args.split()
         if len(params) == 0 or len(params) > 2:
             qg = QuickGuide()
@@ -389,7 +389,7 @@ class Terminal(Cmd):
                 self.stdout.write(f"\n{bred}[-] {rst}Not a valid IP address. Try 'help' for more information.\n\n")
 
 
-    def do_clear(self, args): # DONE
+    def do_clear(self, args):
         if len(args) == 0:
             os.system('clear')
             banner = Banner(__version__, __author__, __github__)
@@ -397,24 +397,24 @@ class Terminal(Cmd):
         else:
             print(f"\n{bred}[-] {rst}Command 'clear' takes no arguments.\n")
 
-    def do_exit(self, args): # DONE
+    def do_exit(self, args):
         if len(args) == 0:
             print(f'\n{blue}[*] {rst}Exiting program...')
             sys.exit()
         else:
             print(f"\n{bred}[-] {rst}Command 'exit' takes no arguments.\n")
 
-    def do_help(self, args): # DONE
+    def do_help(self, args):
         if len(args) == 0:
             manual = FullManual()
             manual.manual()
         else:
             print(f"\n{bred}[-] {rst}Command 'help' takes no arguments.\n")
 
-    def default(self, line): # DONE
+    def default(self, line):
         self.stdout.write(f'\n{bred}[-] {rst}Unknown command: %s\n\n' % (line,))
 
-    def emptyline(self): # DONE
+    def emptyline(self):
         return None
 
 # --------------------------------------------- Main --------------------------------------------- #
