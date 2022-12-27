@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# Credits to jeanphorn: https://github.com/jeanphorn/wordlist 
 
 # ------------------------------------------ LIBRARIES ------------------------------------------- #
 import lib.manual, lib.crack
