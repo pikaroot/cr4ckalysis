@@ -364,8 +364,6 @@ class Terminal(Cmd):
                 self.stdout.write(f'{blue}[*] {rst}SETTINGS\n')
                 self.stdout.write(f'\nwordlist.: ' + self.get_wordlist())
                 self.stdout.write(f'\nwordlist2: ' + self.get_wordlist2() + '\n\n')
-            except ValueError:
-                self.stdout.write(f'\n{bred}[-] {rst}Unsupported hash type: {hashmode}\n\n')
 
     def complete_crack(self, text, line, begidx, endidx):
         if text:
