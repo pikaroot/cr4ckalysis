@@ -6,7 +6,6 @@
 ![Python](https://img.shields.io/badge/python_3.10-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 Cr4ckalysis is an interactive shell for hash analysis and password recovery in Python.<br>
-**Project In Progression**
 
 ## Features
 
