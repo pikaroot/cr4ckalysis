@@ -21,7 +21,6 @@ p@$$w0rd
 p@s$w0rd
 Pa$$w0rd
 P@ssword123
-lwxunlinux
 passpass
 mypass123
 MyPass123
