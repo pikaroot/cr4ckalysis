@@ -58,7 +58,7 @@ class Terminal(Cmd):
         self.prompt = f'{grn}cr4ckalysis>{rst} '
         self.setting1 = "./wordlists/rockyou.txt"
         self.setting2 = "/usr/share/dirb/wordlists/common.txt"
-        self.setting3 = "127.0.0.1" #"<protocol>://<domain/IPv4>/<directory/file><others>" # IP address
+        self.setting3 = "127.0.0.1" # IP address
         self.setting4 = "admin" # Username
         self.setting5 = "./passlist.txt" # Password
         self.setting6 = "MD5" # hashmode
