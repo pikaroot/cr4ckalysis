@@ -22,6 +22,15 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in P
 sudo apt update
 sudo apt install python3
 pip3 install pexpect
+pip3 install ftplib
+```
+
+### Install rockyou.txt
+
+Download here [rockyou.txt.gz](https://github.com/praetorian-inc/Hob0Rules/blob/master/wordlists/rockyou.txt.gz)
+```
+gunzip rockyou.txt.gz
+mv rockyou.txt ~/cr4ckalysis/wordlists
 ```
 
 <!--### Install cr4ckalysis
@@ -36,8 +45,8 @@ cr4ckalysis
 ```
 git clone https://github.com/pikaroot/cr4ckalysis.git
 cd cr4ckalysis
-chmod +x cr4ckalysis
-./cr4ckalysis
+chmod +x cr4ckalysis.py
+./cr4ckalysis.py
 ```
 
 ## Hash Coverage
