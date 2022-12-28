@@ -387,7 +387,7 @@ cr4ckalysis> crack ipv4 ssh
 [*] Testing combination (u:p): tommy:password12345                        
 [*] Process ended.
 ```
-![image](https://user-images.githubusercontent.com/107750005/209805683-24f5bcc7-e586-413f-9142-3158e2c62ab9.png)
+![image](https://user-images.githubusercontent.com/107750005/209809054-be1a0e42-d988-461e-bdc3-17d522e1ffdb.png)
 
 ### FTP Credentials Recovery
 
