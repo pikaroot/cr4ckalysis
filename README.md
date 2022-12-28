@@ -316,9 +316,9 @@ Users can recover the hash by using `crack <hash> <wordlist/wordlist2>` or `crac
 ### SSH Credential Recovery
 
 There are three parameters that need to be set for SSH crack which are `ipv4`, `username`, and `password`.
--`set_ipv4` to the victim's IP address.
--`set_uname` to a username (if known) or a username file.
--'set_pword` to a password (if known) or a password file.
+- `set_ipv4` to the victim's IP address.
+- `set_uname` to a username (if known) or a username file.
+- `set_pword` to a password (if known) or a password file.
 
 ```
 cr4ckalysis> set_ipv4 192.168.25.142                                                         
