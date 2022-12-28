@@ -4,15 +4,12 @@
 
 # ------------------------------------------ LIBRARIES ------------------------------------------- #
 import time
-import lib.manual
-import glob
 import nmap
 import os
 import hashlib, ftplib
 import colorama
 import itertools
 import threading
-from collections import namedtuple
 from pexpect import pxssh
 from colorama import Fore, Style
 from threading import Thread
