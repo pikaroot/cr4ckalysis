@@ -4,12 +4,16 @@
 
 # ------------------------------------------ LIBRARIES ------------------------------------------- #
 import time
+import lib.manual
+import glob
 import nmap
+import sys
 import os
 import hashlib, ftplib
 import colorama
 import itertools
 import threading
+from collections import namedtuple
 from pexpect import pxssh
 from colorama import Fore, Style
 from threading import Thread
@@ -59,6 +63,7 @@ def sshconnect(host, user, password, release):
 
 def ftpconnect(host, user, password, release):
     global found
+    global fail
     f = ftplib.FTP()
     port = 21
 
@@ -69,6 +74,10 @@ def ftpconnect(host, user, password, release):
         f.quit()
     except ftplib.error_perm:
         return
+    except (Exception, ConnectionRefusedError):
+        fail += 1
+        # print(f"{bred}[-] {rst}Connection Refused.")
+        sys.exit()
     else:
         # correct credentials
         print(f"{bgrn}[+] {rst}Valid credentials found.\t[USER]:{bgrn}{user}\t{rst}[PASS]:{bgrn}{password}{rst}")
@@ -147,6 +156,7 @@ class Crack:
             try:
                 userHashes = open(userHash, 'r', encoding='latin-1')
                 infile = open(wordlist, 'r', encoding='latin-1')
+                
             except Exception as e:
                 print(e)
 
@@ -212,6 +222,7 @@ class Crack:
             print(f"{bgrn}[+] {rst}Loading passlist: {password}")
             try:
                 passlist = open(password, 'r', encoding='latin-1')
+               
             except Exception as e:
                 print(e)
 
@@ -220,6 +231,7 @@ class Crack:
                     return
                 elif fail > 5:
                     print(f"{bred}[-] {rst}Too many socket timeouts. Aborting...\n")
+                    fail = 0
                     return
 
                 connection.acquire()
@@ -252,6 +264,7 @@ class Crack:
                     return
                 elif fail > 5:
                     print(f"{bred}[-] {rst}Too many socket timeouts. Aborting...\n")
+                    fail = 0
                     return
 
                 connection.acquire()
@@ -284,6 +297,7 @@ class Crack:
                     return
                 elif fail > 5:
                     print(f"{bred}[-] {rst}Too many socket timeouts. Aborting...\n")
+                    fail = 0
                     return
 
                 connection.acquire()
@@ -337,6 +351,7 @@ class Crack:
                     return
                 elif fail > 5:
                     print(f"{bred}[-] {rst}Too many socket timeouts. Aborting...\n")
+                    fail = 0
                     return
 
                 connection.acquire()
@@ -368,6 +383,7 @@ class Crack:
                     return
                 elif fail > 5:
                     print(f"{bred}[-] {rst}Too many socket timeouts. Aborting...\n")
+                    fail = 0
                     return
 
                 connection.acquire()
@@ -399,6 +415,7 @@ class Crack:
                     return
                 elif fail > 5:
                     print(f"{bred}[-] {rst}Too many socket timeouts. Aborting...\n")
+                    fail = 0
                     return
 
                 connection.acquire()
@@ -407,6 +424,7 @@ class Crack:
                 print(f"{blue}[*] {rst}Testing combination (u:p): {user}:{password}")
                 try:
                     t = Thread(target=ftpconnect, args=(host, user, password, True))
+                    t.deamon = True
                     t.start()
                     if found == False:
                         pass
