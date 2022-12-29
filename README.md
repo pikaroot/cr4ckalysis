@@ -7,7 +7,7 @@
 
 Cr4ckalysis is an interactive shell for hash analysis and password recovery in `Python`. :snake:<br>
 
-## Features :desktop_computer:
+## :desktop_computer: Features 
 
 - [Parameter Settings](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#parameter-settings)
 - [Hash Analysis](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#hash-analysis)
@@ -15,7 +15,7 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in `
 - [SSH Credentials Recovery](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#ssh-credential-recovery)
 - [FTP Credentials Recovery](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#ftp-credentials-recovery)
 
-## Limitations :lock:
+## :robot: Limitations 
 
 - `Wordlists` used must contain at least 50 words in order to function properly (For SSH and FTP cracking).
 - When inserting `file` as parameter, the root `/` or current `./` must include at the front of the file for better performance.
@@ -23,7 +23,7 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in `
 - End users cannot modify the thread counts as it will affect the stability of the system. `default threads = 30`
 - Users may restart the system `Ctrl+C or exit` if encounter any errors. `e.g., UI bugs, infinite loop, etc.`
 
-## Requirements :gear:
+## :gear: Requirements 
 
 ### Install latest python3, pexpect, ftplib, python-nmap
 ```
@@ -48,7 +48,7 @@ cr4ckalysis
 ```
 -->
 
-## Installation :wrench:
+## :wrench: Installation 
 
 ### Clone git repository
 ```
@@ -58,7 +58,7 @@ chmod +x cr4ckalysis.py
 ./cr4ckalysis.py
 ```
 
-## Hash Coverage :abcd:
+## :abcd: Hash Coverage 
 
 | ***Hash Algorithm*** | ***Description***                              | ***Available Commands*** |
 |----------------------|------------------------------------------------|--------------------------|
@@ -78,7 +78,7 @@ chmod +x cr4ckalysis.py
 | BLAKE2b              | Blake 2b (128, 160, 256, 384, 512) bits        | `analyse` `crack`        |
 | BLAKE2s              | Blake 2 (128, 160, 256) bits                   | `analyse` `crack`        |
 
-## User Guide :page_facing_up:
+## :page_facing_up: User Guide 
 
 ### System Banner
 
@@ -441,9 +441,13 @@ cr4ckalysis> crack ipv4 ftp
 ```
 ![image](https://user-images.githubusercontent.com/107750005/209806090-b4d97662-7cae-452b-a270-fac475bae75f.png)
 
-## Similar Tools :hammer_and_pick:
+## :hammer_and_pick: Similar Tools 
 
 - [Hashcat](https://github.com/hashcat/hashcat)
 - [John](https://github.com/openwall/john)
 - [THC-HYDRA](https://github.com/vanhauser-thc/thc-hydra)
 - [Pydictor](https://github.com/LandGrey/pydictor)
+
+<p align="center"><a href="https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#heavy_dollar_signcr4ckalysis"">
+back-to-top
+</a></p>
