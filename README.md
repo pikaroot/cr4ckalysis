@@ -448,6 +448,6 @@ cr4ckalysis> crack ipv4 ftp
 - [THC-HYDRA](https://github.com/vanhauser-thc/thc-hydra)
 - [Pydictor](https://github.com/LandGrey/pydictor)
 
-<p align="center"><a href="https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#heavy_dollar_signcr4ckalysis"">
+<p align="center"><a href="https://github.com/pikaroot/cr4ckalysis/blob/main/README.md#heavy_dollar_signcr4ckalysis">
 back-to-top
 </a></p>
