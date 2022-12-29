@@ -15,6 +15,11 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in P
 - Offline Hash Recovery
 - Parameter Settings
 
+## Limitations
+
+- `Wordlists` used must contain at least 50 words in order to function properly (For SSH and FTP cracking).
+- Limited hash algorithms (based on NIST framework policy) are supported in hash analysis and recovery.
+
 ## Requirements
 
 ### Install latest python3, pexpect, ftplib, python-nmap
