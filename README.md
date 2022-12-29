@@ -1,13 +1,13 @@
-# ***cr4ckalysis***
+# :heavy_dollar_sign:***cr4ckalysis***
 
 ![Kali](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Python](https://img.shields.io/badge/python_3.10-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-Cr4ckalysis is an interactive shell for hash analysis and password recovery in Python.<br>
+Cr4ckalysis is an interactive shell for hash analysis and password recovery in `Python`. :snake:<br>
 
-## Features
+## Features :desktop_computer:
 
 - Hash Analysis
 - SSH Password Cracking
@@ -15,14 +15,14 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in P
 - Offline Hash Recovery
 - Parameter Settings
 
-## Limitations
+## Limitations :lock:
 
 - `Wordlists` used must contain at least 50 words in order to function properly (For SSH and FTP cracking).
 - When inserting `file` as parameter, the root `/` or current `./` must include at the front of the file for better performance.
 - Limited hash algorithms (based on NIST framework policy) are supported in hash analysis and recovery.
 - End users cannot modify the thread counts as it will affect the stability of the system. `default threads = 30`
 
-## Requirements
+## Requirements :gear:
 
 ### Install latest python3, pexpect, ftplib, python-nmap
 ```
@@ -47,7 +47,7 @@ cr4ckalysis
 ```
 -->
 
-## Installation
+## Installation :wrench:
 
 ### Clone git repository
 ```
@@ -57,7 +57,7 @@ chmod +x cr4ckalysis.py
 ./cr4ckalysis.py
 ```
 
-## Hash Coverage
+## Hash Coverage :abcd:
 
 | ***Hash Algorithm*** | ***Description***                              | ***Available Commands*** |
 |----------------------|------------------------------------------------|--------------------------|
@@ -77,7 +77,7 @@ chmod +x cr4ckalysis.py
 | BLAKE2b              | Blake 2b (128, 160, 256, 384, 512) bits        | `analyse` `crack`        |
 | BLAKE2s              | Blake 2 (128, 160, 256) bits                   | `analyse` `crack`        |
 
-## User Guide
+## User Guide :page_facing_up:
 
 ### System Banner
 
@@ -439,7 +439,7 @@ cr4ckalysis> crack ipv4 ftp
 ```
 ![image](https://user-images.githubusercontent.com/107750005/209806090-b4d97662-7cae-452b-a270-fac475bae75f.png)
 
-## Similar Tools
+## Similar Tools :hammer_and_pick:
 
 - [Hashcat](https://github.com/hashcat/hashcat)
 - [John](https://github.com/openwall/john)
