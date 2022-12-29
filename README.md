@@ -9,11 +9,11 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in `
 
 ## :desktop_computer: Features 
 
-- [Parameter Settings](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#parameter-settings)
-- [Hash Analysis](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#hash-analysis)
-- [General Hash Recovery](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#general-hash-recovery)
-- [SSH Credentials Recovery](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#ssh-credential-recovery)
-- [FTP Credentials Recovery](https://github.com/pikaroot/cr4ckalysis/edit/main/README.md#ftp-credentials-recovery)
+- [Parameter Settings](https://github.com/pikaroot/cr4ckalysis/blob/main/README.md#parameter-settings)
+- [Hash Analysis](https://github.com/pikaroot/cr4ckalysis/blob/main/README.md#hash-analysis)
+- [General Hash Recovery](https://github.com/pikaroot/cr4ckalysis/blob/main/README.md#general-hash-recovery)
+- [SSH Credentials Recovery](https://github.com/pikaroot/cr4ckalysis/blob/main/README.md#ssh-credential-recovery)
+- [FTP Credentials Recovery](https://github.com/pikaroot/cr4ckalysis/blob/main/README.md#ftp-credentials-recovery)
 
 ## :robot: Limitations 
 
