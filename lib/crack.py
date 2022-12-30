@@ -89,7 +89,6 @@ def ftpconnect(host, user, password, release):
 class Crack:
 
     def hlcrack(self, userHash, hashmode, wordlist):
-        
         start = time.time()
         cr4cked = False
         self.lineCount = 0
@@ -134,34 +133,31 @@ class Crack:
                 print(f"{bgrn}[+] {rst}cr4cking...") 
                 for line in infile:
                     line = line.strip()
-                    encodeline = line.encode()
+                    enc = line.encode()
                     if hl != hashlib:
-                        lineHash = hl(encodeline).hexdigest()
+                        lineHash = hl(enc).hexdigest()
                     else:
-                        lineHash = hl.new(hashmode.lower().strip(), encodeline).hexdigest()
+                        lineHash = hl.new(hashmode.lower().strip(), enc).hexdigest()
 
                     if str(lineHash) == str(userHash.lower()):
                         end = time.time()
                         print(f"{bgrn}[+] {rst}Plaintext   : {bgrn}{line}{rst}")
                         print(f"{blue}[*] {rst}Words tried : {self.lineCount}")
                         print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
-                        
-                        savedHashFile = open('ocr4cked.txt', 'a+')
-                        tmpFile = open('ocr4cked.txt', 'r+')
-                        
-                        for cr4ckedHash in tmpFile:
-                            if lineHash in cr4ckedHash.split(":")[0].strip():
-                                cr4cked = True
-                        
-                        if cr4cked is False:
-                            print(f"{blue}[*] {rst}Result saved to ocr4cked.txt\n")
-                            savedHashFile.write(f'{lineHash}:{line}:{hashmode}')
-                            savedHashFile.write('\n')
+                        saveFile = open('ocr4cked.txt', 'a+')
+                        with open('ocr4cked.txt', 'r') as read:
+                            for cr4ckedHash in read:
+                                if lineHash == cr4ckedHash.split(":")[0].strip():
+                                    cr4cked = True
+
+                        if cr4cked == False:
+                            print(f"{blue}[*] {rst}Result saved to ocr4cked.txt")
+                            saveFile.write(f'{lineHash}:{line}:{hashmode}')
+                            saveFile.write('\n')
                         else:
-                            print(f"{blue}[*] {rst}Hash cracked previously. Skipped saved to ocr4cked.txt\n")
-                            
-                        savedHashFile.close()
-                        return None
+                            print(f"{bred}[-] {rst}Cracked hash found. Skipped saved to ocr4cked.txt")
+                        saveFile.close()
+                        break
                     else:
                         self.lineCount += 1
         else:
@@ -181,11 +177,11 @@ class Crack:
                 for line in infile:
                     uhash = uhash.strip()
                     line = line.strip()
-                    encodeline = line.encode()
+                    enc = line.encode()
                     if hl != hashlib:
-                        lineHash = hl(encodeline).hexdigest()
+                        lineHash = hl(enc).hexdigest()
                     else:
-                        lineHash = hl.new(hashmode.lower().strip(), encodeline).hexdigest()
+                        lineHash = hl.new(hashmode.lower().strip(), enc).hexdigest()
                                         
                     if str(lineHash) == str(uhash.lower()):
                         end = time.time()
@@ -194,29 +190,23 @@ class Crack:
                         print(f"{blue}[*] {rst}Words tried : {self.lineCount}")
                         print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
                                            
-                        savedHashFile = open('ocr4cked.txt', 'a+')
-                        tmpFile = open('ocr4cked.txt', 'r+')
-                        
-                        for cr4ckedHash in tmpFile:
-                            if lineHash in cr4ckedHash.split(":")[0].strip():
-                                cr4cked = True
-                        
-                        if cr4cked is False:
-                            print(f"{blue}[*] {rst}Result saved to ocr4cked.txt\n")
-                            savedHashFile.write(f'{lineHash}:{line}:{hashmode}')
-                            savedHashFile.write('\n')
+                        saveFile = open('ocr4cked.txt', 'a+')
+                        with open('ocr4cked.txt', 'r') as read:
+                            for cr4ckedHash in read:
+                                if lineHash == cr4ckedHash.split(":")[0].strip():
+                                    cr4cked = True
+
+                        if cr4cked == False:
+                            print(f"{blue}[*] {rst}Result saved to ocr4cked.txt")
+                            saveFile.write(f'{lineHash}:{line}:{hashmode}')
+                            saveFile.write('\n')
                         else:
-                            print(f"{blue}[*] {rst}Hash cracked previously. Skipped saved to ocr4cked.txt\n")
-                            
-                        savedHashFile.close()
+                            print(f"{bred}[-] {rst}Cracked hash found. Skipped saved to ocr4cked.txt")
+                        saveFile.close()
                         break
                     else:
-                        self.lineCount += 1
+                        self.lineCount += 1          
 
-        end = time.time()
-        print(f"{blue}[*] {rst}End of wordlist: {wordlist}")
-        print(f"{blue}[*] {rst}Words tried: {self.lineCount}")
-        print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
         print(f"{blue}[*] {rst}Process ended.\n")
 
     def sshcrack(self, host, user, password):
@@ -263,7 +253,6 @@ class Crack:
                 print(f"{blue}[*] {rst}Testing combination (u:p): {user}:{password}")
                 try:
                     t = Thread(target=sshconnect, args=(host, user, password, True))
-                    t.deamon = True
                     t.start()
                     if found == False:
                         pass
