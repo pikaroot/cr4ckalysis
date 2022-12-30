@@ -19,9 +19,9 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in `
 
 - `Wordlists` used must contain at least 50 words in order to function properly (For SSH and FTP cracking).
 - When inserting `file` as parameter, the root `/` or current `./` must include at the front of the file for better performance.
-- Limited hash algorithms (based on NIST framework policy) are supported in hash analysis and recovery.
 - End users cannot modify the thread counts as it will affect the stability of the system. `default threads = 30`
-- Users may restart the system `Ctrl+C or exit` if encounter any errors. `e.g., UI bugs, infinite loop, etc.`
+- Users may restart the system `Ctrl+C or exit` if encounter any errors. `e.g., UI bugs.`
+- During general hash cracking, users may only do one hash algorithm at a time.
 
 ## :gear: Requirements 
 
