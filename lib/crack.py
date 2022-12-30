@@ -89,6 +89,7 @@ def ftpconnect(host, user, password, release):
 class Crack:
 
     def hlcrack(self, userHash, hashmode, wordlist):
+        
         start = time.time()
         cr4cked = False
         self.lineCount = 0
@@ -127,6 +128,10 @@ class Crack:
 
         if not os.path.isfile(userHash):
             with open(wordlist, "r", encoding='latin-1') as infile:
+                print(f"\n{blue}[*] {rst}hash(.txt): {userHash}")
+                print(f"{blue}[*] {rst}hashmode: {hashmode}")
+                print(f"{blue}[*] {rst}wordlist: {wordlist}")
+                print(f"{bgrn}[+] {rst}cr4cking...") 
                 for line in infile:
                     line = line.strip()
                     encodeline = line.encode()
@@ -140,18 +145,25 @@ class Crack:
                         print(f"{bgrn}[+] {rst}Plaintext   : {bgrn}{line}{rst}")
                         print(f"{blue}[*] {rst}Words tried : {self.lineCount}")
                         print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
+                        
                         savedHashFile = open('ocr4cked.txt', 'a+')
-                        for cr4ckedHash in savedHashFile:
-                            if lineHash in cr4ckedHash.split(":")[1].strip():
+                        tmpFile = open('ocr4cked.txt', 'r+')
+                        
+                        for cr4ckedHash in tmpFile:
+                            if lineHash in cr4ckedHash.split(":")[0].strip():
                                 cr4cked = True
+                        
                         if cr4cked is False:
                             print(f"{blue}[*] {rst}Result saved to ocr4cked.txt\n")
                             savedHashFile.write(f'{lineHash}:{line}:{hashmode}')
                             savedHashFile.write('\n')
+                        else:
+                            print(f"{blue}[*] {rst}Hash cracked previously. Skipped saved to ocr4cked.txt\n")
+                            
                         savedHashFile.close()
                         return None
                     else:
-                        self.lineCount = self.lineCount + 1
+                        self.lineCount += 1
         else:
             try:
                 userHashes = open(userHash, 'r', encoding='latin-1')
@@ -159,41 +171,52 @@ class Crack:
                 
             except Exception as e:
                 print(e)
-
-            for uhash, line in itertools.product(userHashes, infile):
-                uhash = uhash.strip()
-                line = line.strip()
-                encodeline = line.encode()
-                if hl != hashlib:
-                    lineHash = hl(encodeline).hexdigest()
-                else:
-                    lineHash = hl.new(hashmode.lower().strip(), encodeline).hexdigest()
-                
-                if str(lineHash) == str(uhash.lower()):
-                    end = time.time()
-                    print(f"{bgrn}[+] {rst}Current hash: {uhash}")
-                    print(f"{bgrn}[+] {rst}Plaintext   : {bgrn}{line}{rst}")
-                    print(f"{blue}[*] {rst}Words tried : {self.lineCount}")
-                    print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
-                    savedHashFile = open('ocr4cked.txt', 'a+')
-                    for cr4ckedHash in savedHashFile:
-                        if lineHash in cr4ckedHash.split(":")[1].strip():
-                            cr4cked = True
-
-                    if cr4cked is False:
-                        print(f"{blue}[*] {rst}Result saved to ocr4cked.txt\n")
-                        savedHashFile.write(f'{lineHash}:{line}:{hashmode}')
-                        savedHashFile.write('\n')
+    
+            print(f"\n{blue}[*] {rst}hash(.txt): {userHash}")
+            print(f"{blue}[*] {rst}hashmode: {hashmode}")
+            print(f"{blue}[*] {rst}wordlist: {wordlist}")
+            print(f"{bgrn}[+] {rst}cr4cking...") 
+    
+            for uhash in userHashes:
+                for line in infile:
+                    uhash = uhash.strip()
+                    line = line.strip()
+                    encodeline = line.encode()
+                    if hl != hashlib:
+                        lineHash = hl(encodeline).hexdigest()
+                    else:
+                        lineHash = hl.new(hashmode.lower().strip(), encodeline).hexdigest()
+                                        
+                    if str(lineHash) == str(uhash.lower()):
+                        end = time.time()
+                        print(f"{bgrn}[+] {rst}Current hash: {uhash}")                        
+                        print(f"{bgrn}[+] {rst}Plaintext   : {bgrn}{line}{rst}")
+                        print(f"{blue}[*] {rst}Words tried : {self.lineCount}")
+                        print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
+                                           
+                        savedHashFile = open('ocr4cked.txt', 'a+')
+                        tmpFile = open('ocr4cked.txt', 'r+')
                         
-                    savedHashFile.close()
-                    
-                else:
-                    self.lineCount += 1
+                        for cr4ckedHash in tmpFile:
+                            if lineHash in cr4ckedHash.split(":")[0].strip():
+                                cr4cked = True
+                        
+                        if cr4cked is False:
+                            print(f"{blue}[*] {rst}Result saved to ocr4cked.txt\n")
+                            savedHashFile.write(f'{lineHash}:{line}:{hashmode}')
+                            savedHashFile.write('\n')
+                        else:
+                            print(f"{blue}[*] {rst}Hash cracked previously. Skipped saved to ocr4cked.txt\n")
+                            
+                        savedHashFile.close()
+                        break
+                    else:
+                        self.lineCount += 1
 
         end = time.time()
         print(f"{blue}[*] {rst}End of wordlist: {wordlist}")
         print(f"{blue}[*] {rst}Words tried: {self.lineCount}")
-        print(f"{blue}[*] {rst}Time: {round((end - start), 2)} seconds")
+        print(f"{blue}[*] {rst}Process time: {round((end - start), 2)} seconds")
         print(f"{blue}[*] {rst}Process ended.\n")
 
     def sshcrack(self, host, user, password):
