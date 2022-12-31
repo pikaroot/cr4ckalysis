@@ -5,7 +5,9 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Python](https://img.shields.io/badge/python_3.10-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-Cr4ckalysis is an interactive shell for hash analysis and password recovery in `Python`. :snake:<br>
+Cr4ckalysis is an interactive shell for hash analysis and password recovery in `Python`. :snake:
+
+Currently works on Linux distros only.
 
 ## :desktop_computer: Features 
 
@@ -25,13 +27,14 @@ Cr4ckalysis is an interactive shell for hash analysis and password recovery in `
 
 ## :gear: Requirements 
 
-### Install latest python3, pexpect, ftplib, python-nmap
+### Install latest apt and pip3 modules
 ```
 sudo apt update
 sudo apt install python3
 pip3 install pexpect
 pip3 install ftplib
 pip3 install python-nmap
+pip3 install colorama
 ```
 
 ### Install rockyou.txt
