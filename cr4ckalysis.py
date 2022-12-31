@@ -215,7 +215,7 @@ class Terminal(Cmd):
                 self.stdout.write(f"\n{bred}[-] {rst}File {params[0]} not exist.\n\n")
             else:
                 self.setting4 == params[0]
-                self.set_password(params[0])
+                self.set_username(params[0])
                 print(f"\n{bgrn}[+] {rst}String input: {params[0]}")
                 print(f"{bgrn}[+] {rst}Set username --> {params[0]}")
                 print(f"{bgrn}[+] {rst}Command completed successfully.\n")
