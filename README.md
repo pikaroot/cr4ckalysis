@@ -82,18 +82,8 @@ chmod +x cr4ckalysis.py
 
 ### System Banner
 
-```
-author: pikaroot (David) version: 1.0.1                                                      
-github: https://github.com/pikaroot/cr4ckalysis                                              
-┏━━━╸┏━━━┓╻   ╻┏━━━╸╻┏━━ ┏━━━┓╻   ╻   ╻┏━━━┓╻┏━━━┓                                           
-┃    ┃   ┃┃   ┃┃    ┃┃   ┃   ┃┃   ┃   ┃┃    ┃┃                                               
-┃    ┣┳━━┛┗━━━┫┃    ┣┻━━┓┣━━━┫┃   ┗━┳━┛┗━━━┓┃┗━━━┓                                           
-┗━━━╸╹┗━━╸    ╹┗━━━╸╹   ╹╹   ╹┗━━━╸ ╹  ┗━━━┛╹┗━━━┛                                           
-                                                                                             
-[*] Double tab for available commands.                                                       
-                                                                                             
-cr4ckalysis>
-```
+![image](https://user-images.githubusercontent.com/107750005/210126014-57c37a91-9249-40b6-b0ae-0843a7eab720.png)
+
 ### User Man Page
 
 ```
@@ -316,10 +306,14 @@ cr4ckalysis> analyse ./testhashes.txt
 
 ### General Hash Recovery
 
-In general hash cracking, the `wordlist`, `wordlist2`, and `hashmode` are the parameters that affect the results. Users can insert their own wordlists to depends on their situation. Users can recover the hash by using `crack <hash> <wordlist/wordlist2>` or `crack <file> <wordlist/wordlist2>` after hash analysis.
+In general hash cracking, the `wordlist`, `wordlist2`, and `hashmode` are the parameters that affect the results. Users can insert their own wordlists to depends on their situation. Users can recover the hash by using `crack <hash> <wordlist/wordlist2>` or `crack <./file> <wordlist/wordlist2>` after hash analysis.
 <br>
 
 ![image](https://user-images.githubusercontent.com/107750005/209805220-9c9e59a3-820f-4924-87ba-3f5ad830da87.png)
+
+`crack <./file> <wordlist/wordlist2>`
+
+![image](https://user-images.githubusercontent.com/107750005/210125666-83cf8acb-f644-447f-876b-559269de5aad.png)
 
 ### SSH Credential Recovery
 
@@ -395,6 +389,8 @@ cr4ckalysis> crack ipv4 ssh
 [*] Testing combination (u:p): tommy:password12345                        
 [*] Process ended.
 ```
+![image](https://user-images.githubusercontent.com/107750005/210125958-dbe2ac01-55bf-456b-873d-fbca92ef8d0e.png)
+
 ![image](https://user-images.githubusercontent.com/107750005/209809054-be1a0e42-d988-461e-bdc3-17d522e1ffdb.png)
 
 ### FTP Credentials Recovery
