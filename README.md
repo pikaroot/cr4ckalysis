@@ -60,6 +60,7 @@ cd cr4ckalysis
 chmod +x cr4ckalysis.py
 ./cr4ckalysis.py
 ```
+NOTE: Users can just clone `cr4ckalysis.py`, `lib`, `wordlists` instead of cloning all files.
 
 ## :abcd: Hash Coverage 
 
