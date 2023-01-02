@@ -412,7 +412,7 @@ class Terminal(Cmd):
             print(f"\n{bred}[-] {rst}Command 'help' takes no arguments.\n")
 
     def default(self, line): 
-        self.stdout.write(f'\n{bred}[-] {rst}Unknown command: {line}')
+        self.stdout.write(f'\n{bred}[-] {rst}Unknown command: {line}\n\n')
 
     def emptyline(self): 
         return None
