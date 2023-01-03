@@ -289,12 +289,14 @@ class Terminal(Cmd):
         else:
             print(f"\n{bred}[-] {rst}Command 'ls' takes no arguments.\n")
 
-    def do_analyse(self, args):   
+    def do_analyse(self, args): 
+        analyzed = False  
         params = args.split()
         if len(params) == 0 or len(params) > 1:
             qg = QuickGuide()
             qg.analyseqg()
         else:
+
             hashID = Analyse()
             
             if os.path.isfile(params[0]):
@@ -302,9 +304,24 @@ class Terminal(Cmd):
                     with open(params[0], "r", encoding="latin-1") as infile:
                         self.stdout.write(f"\n{blue}[*] {rst}File '{params[0]}'\n")
                         for line in infile:
-                            if line.strip():
-                                self.stdout.write(f"\n{blue}[*] {rst}Analyzing '{grn}{line.strip()}{rst}'...\n")
-                                lib.analysis.writeResult(hashID.identifyHash(line), self.stdout)
+                            line = line.strip()
+                            self.stdout.write(f"\n{blue}[*] {rst}Analyzing '{grn}{line.strip()}{rst}'...\n")
+                            lib.analysis.writeResult(hashID.identifyHash(line), self.stdout)
+                            saveAnalysis = open('oanalysis.txt', 'a+')
+                            with open('oanalysis.txt', 'r') as read:
+                                for analysis in read:
+                                    if line == analysis.strip():
+                                        analyzed = True
+                                        
+                                if analyzed == False:
+                                    print(f"{blue}[*] {rst}Saved analysis to oanalysis.txt")
+                                    saveAnalysis.write(f'{line}\n')
+                                    lib.analysis.writeResultToFile(hashID.identifyHash(line), saveAnalysis)
+                                    saveAnalysis.write('\n')
+                                else:
+                                    print(f"{bred}[-] {rst}Analyzed hash found to oanalysis.txt. Skipped save operation.")
+                                saveAnalysis.close()
+
                 except KeyboardInterrupt:
                     self.stdout.write(f"\n{bred}[-] {rst}Interrupt analysis '{params[0]}'.\n\n")
                 else:
@@ -314,7 +331,21 @@ class Terminal(Cmd):
                 self.stdout.write(f"\n{bred}[-] {rst}File {params[0]} not exist.\n\n")
             else:
                 self.stdout.write(f"\n{blue}[*] {rst}Analyzing '{grn}{params[0]}{rst}'...\n")
-                lib.analysis.writeResult(hashID.identifyHash(params[0]), self.stdout)
+                lib.analysis.writeResult(hashID.identifyHash(params[0]), self.stdout)                
+                saveAnalysis = open('oanalysis.txt', 'a+')
+                with open('oanalysis.txt', 'r') as read:
+                    for analysis in read:
+                        if params[0] == analysis.strip():
+                            analyzed = True
+                                        
+                    if analyzed == False:
+                        print(f"{blue}[*] {rst}Saved analysis to oanalysis.txt")
+                        saveAnalysis.write(f'{params[0]}\n')
+                        lib.analysis.writeResultToFile(hashID.identifyHash(params[0]), saveAnalysis)
+                        saveAnalysis.write('\n')
+                    else:
+                        print(f"{bred}[-] {rst}Analyzed hash found to oanalysis.txt. Skipped save operation.")
+                    saveAnalysis.close()
                 self.stdout.write(f"\n{blue}[*] {rst}End of analysis.\n\n")
 
     def complete_analyse(self, text, line, begidx, endidx): 
