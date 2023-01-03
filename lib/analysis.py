@@ -179,26 +179,38 @@ collections = [
 # -------------------------------------------- ANALYSE -------------------------------------------- #
 class Analyse(object):
 
-	def __init__(self, collection=collections):
-		super(Analyse, self).__init__()
+    def __init__(self, collection=collections):
+        super(Analyse, self).__init__()
 
-		self.collections = list(collections)
+        self.collections = list(collections)
 
-	def identifyHash(self, h):
-		h = h.strip()
-		for collection in self.collections:
-			if collection.regex.match(h):
-				for mode in collection.modes:
-					yield mode
+    def identifyHash(self, h):
+        h = h.strip()
+        for collection in self.collections:
+            if collection.regex.match(h):
+                for mode in collection.modes:
+                    yield mode
 
 def writeResult(identified_modes, outfile):
+	
+    count = 0
+    hashTypes = ""
+    for mode in identified_modes:
+        count += 1
+        hashTypes += f'\033[1;32m[+] \033[0m{mode.name}\n'
+    outfile.write(hashTypes)  
+    if count == 0:
+        outfile.write("\033[1;31m[-] \033[0mUnknown hash.\n")
+    return (count > 0)
 
-	count = 0
-	hashTypes = ""
-	for mode in identified_modes:
-		count += 1
-		hashTypes += f'\033[1;32m[+] \033[0m{mode.name}\n'
-	outfile.write(hashTypes)
-	if count == 0:
-		outfile.write("\033[1;31m[-] \033[0mUnknown hash.\n")
-	return (count > 0)
+def writeResultToFile(identified_modes, outfile):
+
+    count = 0
+    hashTypes = ""
+    for mode in identified_modes:
+        count += 1
+        hashTypes += f'[+] {mode.name}\n'
+    outfile.write(hashTypes)    
+    if count == 0:
+        outfile.write("[-] Unknown hash.\n")
+    return (count > 0)
