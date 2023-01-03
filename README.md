@@ -209,39 +209,31 @@ password.: ./testpass.txt
 hashmode.: MD5
 ```
 ### Hash Analysis
-The system can recognize and analyse respectable amount of hash algorithms based on user input.
+The system can recognize and analyse respectable amount of hash algorithms based on user input. The system will then save the analysis result to a text file.
 ```
 cr4ckalysis> analyse ./testhashes.txt                                                        
-                                                                                             
-[*] File './testhashes.txt'                                                                  
-                                                                                             
-[*] Analyzing '8eac4ee0790850314134f837b47dfd56'...                                          
-[+] MD2                                                                                      
-[+] MD5                                                                                      
-[+] MD4                                                                                      
-[+] LM                                                                                       
-[+] RIPEMD-128                                                                               
-[+] Blake2b-128                                                                              
-[+] Blake2s-128                                                                              
-[+] Domain Cached Credentials                                                                
-[+] Domain Cached Credentials 2                                                              
-                                                                                             
-[*] Analyzing '$2a$08$VPzNKPAY60FsAbnq.c.h5.XTCZtC1z.j3hnlDFGImN9FcpfR1QnLq'...              
-[+] Blowfish(OpenBSD)                                                                        
+
+[*] File './testhashes.txt'
+
+[*] Analyzing '$2a$08$VPzNKPAY60FsAbnq.c.h5.XTCZtC1z.j3hnlDFGImN9FcpfR1QnLq'...
+[+] Blowfish(OpenBSD)
 [+] Woltlab Burning Board 4.x
 [+] bcrypt
+[*] Saved analysis to oanalysis.txt
 
 [*] Analyzing 'b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3'...
-[+] SHA-1                                                                                    
+[+] SHA-1
 [+] RIPEMD-160
 [+] Blake2b-160
 [+] Blake2s-160
+[*] Saved analysis to oanalysis.txt
 
-[*] Analyzing 'adfb6dd1ab1238afc37acd8ca24c1279f8d46f61907dd842faab35b0cc41c6e8ad84cbdbef4964b8334c22c4985c2387d53bc47e6c3d0940ac962f521a127d9f'...                                       
-[+] SHA-512                                                                                  
+[*] Analyzing 'adfb6dd1ab1238afc37acd8ca24c1279f8d46f61907dd842faab35b0cc41c6e8ad84cbdbef4964b8334c22c4985c2387d53bc47e6c3d0940ac962f521a127d9f'...
+[+] SHA-512
 [+] Whirlpool
 [+] SHA3-512
 [+] Blake2b-512
+[*] Saved analysis to oanalysis.txt
 
 [*] Analyzing '1c8bfe8f801d79745c4631d09fff36c82aa37fc4cce4fc946683d7b336b63032'...
 [+] SHA-256                                                                                  
@@ -249,52 +241,35 @@ cr4ckalysis> analyse ./testhashes.txt
 [+] SHA3-256
 [+] Blake2b-256
 [+] Blake2s-256
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] Analyzing '52690d7a185168de52d1e7271df62ac2f1c6275967942ff1198eeb957ec669ff9a17079eeeac663bb063ca6d3e4f6bff'...                                                                       
 [+] SHA-384                                                                                  
 [+] SHA3-384
 [+] Blake2b-384
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] Analyzing '$bcrypt-sha256$v=2,t=2b,r=12$n79VH.0Q2TMWmt3Oqt9uku$Kq4Noyk3094Y2QlB8NdRT8SvGiI4ft2'...                                                                                    
 [+] bcrypt(SHA-256)                                                                          
-
-[*] Analyzing '$bcrypt-sha256$v=2,t=2b,r=13$AmytCA45b12VeVg0YdDT3.$IZTbbJKgJlD5IJoCWhuDUqYjnJwNPlO'...                                                                                    
-[+] bcrypt(SHA-256)                                                                          
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] Analyzing '$pbkdf2-sha256$29000$w5hzDiHkHEMoxZiTEiLkPA$JVlYyyek5oc0CV.zayIisaW9Mncl7OYnEs49S.vKtLg'...                                                                                
 [+] PBKDF2-SHA256(Generic)                                                                   
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] Analyzing 'bcrypt_sha256$$2b$12$QeWvpi7hQ8cPQBF0LzD4C.89R81AV4PxK0kjVXG73fkLoQxYBundW'...
 [+] Django(bcrypt-SHA256)                                                                    
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] Analyzing 'pbkdf2_sha256$20000$DS20ZOCWTBFN$AFfzg3iC24Pkj5UtEu3O+J8KOVBQvaLVx43D0Wsr4PY='...                                                                                          
 [+] Django(PBKDF2-HMAC-SHA256)                                                               
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] Analyzing '$krb5pa$23$user$realm$salt$4e751db65422b2117f7eac7b721932dc8aa0d9966785ecd958f971f622bf5c42dc0c70b532363138363631363132333238383835'...                                    
 [+] Kerberos 5 AS-REQ Pre-Auth                                                               
-
-[*] Analyzing '$mskrb5$$$98cd00b6f222d1d34e08fe0823196e0b$5937503ec29e3ce4e94a051632d0fff7b6781f93e3decf7dca707340239300d602932154'...                                                    
-[+] Kerberos 5 AS-REQ Pre-Auth                                                               
-
-[*] Analyzing 'fb611de45b88433d9f4dd604c90e9a2fc1be1843'...
-[+] SHA-1                                                                                    
-[+] RIPEMD-160
-[+] Blake2b-160
-[+] Blake2s-160
-
-[*] Analyzing '593b743b207e10ff55ec63e71a46c07909d0880a'...
-[+] SHA-1                                                                                    
-[+] RIPEMD-160
-[+] Blake2b-160
-[+] Blake2s-160
-
-[*] Analyzing '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8'...
-[+] SHA-1                                                                                    
-[+] RIPEMD-160
-[+] Blake2b-160
-[+] Blake2s-160
-
-[*] Analyzing 'ce3fc53fddd6db373370b9e74af93360'...
+[*] Saved analysis to oanalysis.txt
+                                                                                             
+[*] Analyzing '161ebd7d45089b3446ee4e0d86dbcf92'...                                          
 [+] MD2                                                                                      
 [+] MD5
 [+] MD4
@@ -304,13 +279,14 @@ cr4ckalysis> analyse ./testhashes.txt
 [+] Blake2s-128
 [+] Domain Cached Credentials
 [+] Domain Cached Credentials 2
-
+[*] Saved analysis to oanalysis.txt
+                                                                                             
 [*] End of file './testhashes.txt'.
 ```
 
 ### General Hash Recovery
 
-In general hash cracking, the `wordlist`, `wordlist2`, and `hashmode` are the parameters that affect the results. Users can insert their own wordlists to depends on their situation. Users can recover the hash by using `crack <hash> <wordlist/wordlist2>` or `crack <./file> <wordlist/wordlist2>` after hash analysis.
+In general hash cracking, the `wordlist`, `wordlist2`, and `hashmode` are the parameters that affect the results. Users can insert their own wordlists to depends on their situation. Users can recover the hash by using `crack <hash> <wordlist/wordlist2>` or `crack <./file> <wordlist/wordlist2>` after hash analysis. The system will then save the crack results to a text file.
 <br>
 
 ![image](https://user-images.githubusercontent.com/107750005/209805220-9c9e59a3-820f-4924-87ba-3f5ad830da87.png)
